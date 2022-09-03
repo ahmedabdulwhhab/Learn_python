@@ -19,6 +19,9 @@
 # create a folder for example ../data/db <br>
 #sudo mongod --dbpath='/home/ubuntu/sdn/projects/sdn-cp-loadbalancer/data/dp' 
 <br>
+#sudo mongod --dbpath='/home/ubuntu/sdn/projects/learn_pymongo/data/db'
+
+<br>
 
 
 #sudo rm -r ./data/dp/
