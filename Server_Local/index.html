@@ -1,0 +1,121 @@
+<html> 
+<head> 
+<script type="text/javascript"> 
+var c=0; 
+var t; 
+var timer_is_on=0; 
+function calc() 
+{ 
+var num = new Number(document.getElementById('txt1').value); 
+document.getElementById('oper').innerHTML= "+";
+num= num+ Number(document.getElementById('txt2').value); 
+document.getElementById('res').value =num;
+} 
+function calc2() 
+{ 
+var num = new Number(document.getElementById('txt1').value); 
+document.getElementById('oper').innerHTML= "-";
+num= num- Number(document.getElementById('txt2').value); 
+document.getElementById('res').value =num;
+} 
+
+
+function show_post() 
+{ 
+
+document.getElementById("frame").srcdoc =" Wait";  
+var Username=document.getElementById("txt_user").value;
+var Password=document.getElementById("txt_pass").value;
+
+
+var data=JSON.stringify({ 'User': Username, 'Password': Password });
+alert(data);
+a= fetch("/",{
+method:'POST', 
+mode:'no-cors',
+'Content-Type':'application/json',
+body:data})
+.then((response) => {
+        document.getElementById("frame").srcdoc = response.status;  
+    }) ;
+
+} 
+
+function retrieve(){
+    document.getElementById("frame").srcdoc =" Wait"; 
+    var Username=document.getElementById("txt_user").value;
+var Password=document.getElementById("txt_pass").value;
+
+
+var data=JSON.stringify({ 'User': Username, 'Password': Password });
+alert(data);
+    
+    let headers = new Headers();
+
+  headers.append('Content-Type', 'application/json');
+  headers.append('Accept', 'application/json');
+  headers.append('Origin', 'http://localhost:7575');
+  headers.append('Access-Control-Allow-Origin', 'http://localhost:7575');
+  headers.append('Access-Control-Allow-Credentials', 'true');
+    console.log(headers);
+
+    url = "/";
+    fetch(url, {
+        mode: 'no-cors',
+        credentials: 'include',
+        method: 'POST',
+        headers: headers,
+        body:data
+    })
+    .then((response) => {
+        document.getElementById("frame").srcdoc = response.ok+' '+response.status;  
+    }) 
+}
+
+
+
+
+
+</script> 
+</head> 
+<body> 
+<h1> Mahmoud </h1>
+<h1 style="background-color:DodgerBlue;">Hello World</h1>
+<p style="background-color:Tomato;">Lorem ipsum...</p>
+<br>
+<a href="/time">
+<h1>Time</h1></a>
+
+<form> 
+<input type="button" value="Calc" onClick="calc()"> 
+<input type="button" value="Calc2" onClick="calc2()"> 
+<input type="text" 
+ id="txt1" 
+ value =0> 
+ <p id='oper'>operation</p>
+<input type="text" 
+ id="txt2"
+ value =0> 
+ <br>  
+    Output is:<t><output id="res"></output>   
+    <br>
+<input type="button" value="Under construction" > 
+<br><br>
+Username <input type="text" 
+ id="txt_user" 
+ value ='Ahmed'> 
+ <br>
+ Password <input type="password" 
+ id="txt_pass" 
+ value ='12345'> 
+ <br>
+<input type="button"  onclick="retrieve()"  value="Post by retrieve" 
+/> 
+<input type="button"  onclick="show_post()"  value="Post by show post" 
+/> 
+
+
+<form><iframe id="frame" style="resize: both;width: 100px; height:100px;"></iframe></form>
+</body>
+</http>
+                    
