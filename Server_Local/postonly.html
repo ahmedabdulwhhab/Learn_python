@@ -1,0 +1,28 @@
+<html>
+<body>
+<h1>To send username and password to server</h1>
+<script>
+show_post();
+function show_post() 
+{ 
+
+
+var Username="Mahmoud and Hajer";
+var Password="012345";
+
+
+var data=JSON.stringify({ 'User': Username, 'Password': Password });
+alert(data);
+a= fetch("http://192.168.1.7:7575/",{
+method:'POST', 
+mode:'no-cors',
+'Content-Type':'application/json',
+body:data})
+.then((response) => {
+       alert("Good Response from server");  
+    }) ;
+
+} 
+</script>
+</body>
+</html>
