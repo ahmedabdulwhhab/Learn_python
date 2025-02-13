@@ -348,8 +348,8 @@ def main():
 
     with open(args.list, 'r') as file:
         urls = file.readlines()
-    #test_Cookie_initiate_request_without_time_dealy(urls, args.proxy)
-    #test_Cookie_initiate_request_with_time_dealy(urls, args.proxy)
+    test_Cookie_initiate_request_without_time_dealy(urls, args.proxy)
+    test_Cookie_initiate_request_with_time_dealy(urls, args.proxy)
     test_urls_initiate_request_without_time_dealy(urls, args.proxy)
     test_urls_initiate_request_with_time_dealy(urls, args.proxy)
     
