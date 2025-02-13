@@ -189,7 +189,7 @@ def main():
     )
 
     parser.add_argument('-l', '--list', type=str, required=True, metavar='', help=Fore.CYAN + "Path to the list of URLs (e.g. /path/to/list.txt)")
-    parser.add_argument('-p', '--proxy', type=str, required=True, metavar='', help=Fore.CYAN + "Proxy address (e.g. 127.0.0.1:8080)")
+    parser.add_argument('-p', '--proxy', type=str, required=True, metavar='', help=Fore.CYAN + "Proxy address (e.g. http://127.0.0.1:8080)")
     
 
     args = parser.parse_args()
