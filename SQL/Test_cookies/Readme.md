@@ -7,7 +7,7 @@
 <OL>use proxy to test</OL>
 <OL>in windows :
 <br>
-python cookie_url_add_quote_and_time_payloads_006.py -l "c:\ahmed\urls.txt" -p http://127.0.0.8090
+python cookie_url_add_quote_and_time_payloads_006.py -l "c:\ahmed\urls.txt" -p http://127.0.0.1:8090
 </OL>
 
 
